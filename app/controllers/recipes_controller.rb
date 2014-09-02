@@ -19,12 +19,9 @@ class RecipesController < ApplicationController
     if @recipe.save
       redirect_to('/recipes')
     else
+      flash[:notice] = "Your recipe was not added."
       render('recipes/new.html.erb')
     end
-  end
-
-  def show
-
   end
 
   def delete

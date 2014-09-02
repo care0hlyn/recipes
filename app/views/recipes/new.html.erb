@@ -1,3 +1,14 @@
+<% content_for(:title, "New Recipe | Recipes") %>
+
+<% if @recipe.errors.any? %>
+  <h3>Please fix the following errors: </h3>
+  <ul>
+    <% @recipe.errors.full_messages.each do |message|%>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <h1>Enter new recipe:</h1>
 
 <form action="/recipes" method="post">

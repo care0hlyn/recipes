@@ -1,8 +1,10 @@
+<% content_for(:title, "Main Menu | Contributors") %>
+
 <h1>Contributors!!</h1>
 
 <ul>
   <% @contributors.each do |contributor| %>
-    <li><a href="contributors/<%= contributor.id %>/recipes"><%= contributor.name %></a>
+    <li><a href="contributors/<%= contributor.id %>/recipes"><%= contributor.name %></a> |
       <a href="/contributors/<%= contributor.id%>/edit">Edit</a> |
       <a href="/contributors/<%= contributor.id %>"
       data-confirm="You sure?"
@@ -11,5 +13,3 @@
   <% end %>
 </ul>
 
-
-<p><a href="recipes/new">Click to add recipe.</a></p>
