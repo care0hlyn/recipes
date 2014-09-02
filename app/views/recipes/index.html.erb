@@ -1,6 +1,12 @@
-<% content_for(:title, "Main Menu | Recipes") %>
+<% if @contributor %>
+  <% content_for(:title, @contributor.name + " | Recipes") %>
+<% else %>
+  <% content_for(:title, "Main Menu | Recipes") %>
+<% end %>
 
-<h1>Recipes!!</h1>
+<h1>Recipes
+  <%= @contributor ? " from " + @contributor.name : "" %>
+</h1>
 
 <ul>
   <% @recipes.each do |recipe| %>
@@ -13,3 +19,4 @@
   <% end %>
 </ul>
 
+<p><a href="/recipes/new">Click to create new recipe.</a></p>
