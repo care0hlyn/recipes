@@ -9,4 +9,6 @@ Rails.application.routes.draw do
 
   match('/contributors', {:via => :get, :to => 'contributors#index'})
   match('/contributors/new', {:via => :get, :to => 'contributors#new'})
+  match('/contributors', {:via => :post, :to => 'contributors#create'})
+  match('/contributors/:id', {:via => :delete, :to => 'contributors#delete'})
 end

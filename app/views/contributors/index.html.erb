@@ -2,6 +2,10 @@
 
 <ul>
   <% @contributors.each do |contributor| %>
-    <li><%= contributor.name %></li>
+    <li><%= contributor.name %> |
+      <a href="/contributors/<%= contributor.id %>"
+      data-confirm="You sure?"
+      data-method="delete"
+      rel="nofollow">Delete</a></li>
   <% end %>
 </ul>

@@ -9,4 +9,19 @@ class ContributorsController < ApplicationController
     render('contributors/new.html.erb')
   end
 
+  def create
+    @contributor = Contributor.create(params[:contributor])
+    if @contributor.save
+      redirect_to('/contributors')
+    else
+      render('contributors/index.html.erb')
+    end
+  end
+
+  def delete
+    @contributor = Contributor.find(params[:id])
+    @contributor.destroy
+    redirect_to('/contributors')
+  end
+
 end
