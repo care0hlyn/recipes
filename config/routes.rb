@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   match('/contributors/:id', {:via => :delete, :to => 'contributors#delete'})
   match('/contributors/:id/edit', {:via => :get, :to => 'contributors#edit'})
   match('/contributors/:id', {:via => [:patch, :put], :to => 'contributors#update'})
+
+  match('contributors/:id/recipes', {:via => :get, :to => 'recipes#index'})
 end

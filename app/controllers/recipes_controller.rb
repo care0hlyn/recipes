@@ -1,6 +1,11 @@
 class RecipesController < ApplicationController
   def index
-    @recipes = Recipe.all
+    if params[:id]
+      @contributor = Contributor.find(params[:id])
+      @recipes = @contributor.recipes
+    else
+      @recipes = Recipe.all
+    end
     render('recipes/index.html.erb')
   end
 
@@ -16,6 +21,10 @@ class RecipesController < ApplicationController
     else
       render('recipes/new.html.erb')
     end
+  end
+
+  def show
+
   end
 
   def delete

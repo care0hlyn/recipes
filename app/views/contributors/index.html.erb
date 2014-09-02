@@ -2,7 +2,7 @@
 
 <ul>
   <% @contributors.each do |contributor| %>
-    <li><%= contributor.name %> |
+    <li><a href="contributors/<%= contributor.id %>/recipes"><%= contributor.name %></a>
       <a href="/contributors/<%= contributor.id%>/edit">Edit</a> |
       <a href="/contributors/<%= contributor.id %>"
       data-confirm="You sure?"
@@ -10,3 +10,6 @@
       rel="nofollow">Delete</a></li>
   <% end %>
 </ul>
+
+
+<p><a href="recipes/new">Click to add recipe.</a></p>
