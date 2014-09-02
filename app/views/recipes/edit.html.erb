@@ -1,0 +1,8 @@
+<h1>Edit your recipe</h1>
+
+<form action="/recipes/<%= @recipe.id %>" method="post">
+  <input name="_method" type="hidden" value="patch">
+  <%= render('form') %>
+  <button>Update Recipe</button>
+</form>
+
