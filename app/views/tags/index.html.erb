@@ -1,0 +1,17 @@
+<% content_for(:title, "Tags") %>
+
+<h1>Tags</h1>
+
+<ul>
+  <% @recipes.each do |recipe| %>
+    <li><%= recipe.name %> |
+      <a href="/recipes/<%= recipe.id%>/edit">Edit</a> |
+      <a href="/recipes/<%= recipe.id %>"
+      data-confirm="You sure?"
+      data-method="delete"
+      rel="nofollow">Delete</a></li>
+  <% end %>
+</ul>
+
+<p><a href="/recipes/new">Click to create new recipe.</a></p>
+<p><a href="/contributors">Click to go to contributor page.</a></p>
