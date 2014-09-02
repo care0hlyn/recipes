@@ -3,6 +3,7 @@
 <ul>
   <% @contributors.each do |contributor| %>
     <li><%= contributor.name %> |
+      <a href="/contributors/<%= contributor.id%>/edit">Edit</a> |
       <a href="/contributors/<%= contributor.id %>"
       data-confirm="You sure?"
       data-method="delete"

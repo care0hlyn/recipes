@@ -24,4 +24,18 @@ class ContributorsController < ApplicationController
     redirect_to('/contributors')
   end
 
+  def edit
+    @contributor = Contributor.find(params[:id])
+    render('contributors/edit.html.erb')
+  end
+
+  def update
+    @contributor = Contributor.find(params[:id])
+    if @contributor.update(params[:contributor])
+      redirect_to('/contributors')
+    else
+      render('contributors/edit.html.erb')
+    end
+  end
+
 end
