@@ -12,6 +12,7 @@ class ContributorsController < ApplicationController
   def create
     @contributor = Contributor.create(params[:contributor])
     if @contributor.save
+      flash[:notice] = "Contributor was added."
       redirect_to('/contributors')
     else
       render('contributors/index.html.erb')
@@ -21,6 +22,7 @@ class ContributorsController < ApplicationController
   def delete
     @contributor = Contributor.find(params[:id])
     @contributor.destroy
+    flash[:notice] = "Contributor was deleted."
     redirect_to('/contributors')
   end
 
@@ -32,6 +34,7 @@ class ContributorsController < ApplicationController
   def update
     @contributor = Contributor.find(params[:id])
     if @contributor.update(params[:contributor])
+      flash[:notice] = "Contributor was updated."
       redirect_to('/contributors')
     else
       render('contributors/edit.html.erb')
