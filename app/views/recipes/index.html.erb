@@ -10,7 +10,7 @@
 
 <ul>
   <% @recipes.each do |recipe| %>
-    <li><%= recipe.name %> |
+    <li><a href="/recipes/<%= recipe.id%>/show"><%= recipe.name %></a> |
       <a href="/recipes/<%= recipe.id%>/edit">Edit</a> |
       <a href="/recipes/<%= recipe.id %>"
       data-confirm="You sure?"
@@ -21,4 +21,5 @@
 
 <p><a href="/recipes/new">Click to create new recipe.</a></p>
 <p><a href="/contributors">Click to go to contributor page.</a></p>
+<p><a href="/tags">Click to go to the tag page.</a></p>
 

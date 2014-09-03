@@ -1,0 +1,19 @@
+<% content_for(:title, "Recipes") %>
+
+<h1><%= @recipe.name%></h1>
+
+<h4>Tags</h4>
+<ul>
+  <% @recipe.tags do |tag|%>
+    <li><%= tag.name%></li>
+  <% end %>
+</ul>
+
+<h4>Recipe steps:</h4>
+<p><%= @recipe.steps%></p>
+
+
+
+<p><a href="/tags">Click to go to tag page.</a></p>
+<p><a href="/contributors">Click to go to contributor page.</a></p>
+<p><a href="/recipes">Click to go to the recipes page.</a></p>
