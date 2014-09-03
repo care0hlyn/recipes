@@ -1,16 +1,34 @@
-  <label for="recipe_name">Name:</label>
-  <input id="recipe_name" name="recipe[name]" type="text" value="<%= @recipe.name%>">
-  <label for="recipe_steps">Steps:</label>
-  <input id="recipe_steps" name="recipe[steps]" type="text"
-  value="<%= @recipe.steps %>">
-  <label for="recipe_contributor">Contributor:</label>
-  <select name="recipe[contributor_id]">
-     <% Contributor.all.each do |contributor| %>
-         <% if contributor.id == @recipe.contributor_id %>
-          <option value="<%= contributor.id %>" selected><%= contributor.id %> | <%= contributor.name %></option>
-         <% else %>
-          <option value="<%= contributor.id %>"><%= contributor.id %> | <%= contributor.name %></option>
-        <% end %>
-     <% end %>
-  </select>
+  <div class="form-group">
+    <label for="recipe_name">Name:</label>
+    <input id="recipe_name" name="recipe[name]" type="text" value="<%= @recipe.name%>">
+  </div>
+  <div class="form-group">
+    <label for="recipe_steps">Steps:</label>
+    <input id="recipe_steps" name="recipe[steps]" type="text"
+    value="<%= @recipe.steps %>">
+  </div>
+  <div class="form-group">
+    <label for="recipe_contributor">Contributor:</label>
+    <select name="recipe[contributor_id]">
+       <% Contributor.all.each do |contributor| %>
+           <% if contributor.id == @recipe.contributor_id %>
+            <option value="<%= contributor.id %>" selected><%= contributor.id %> | <%= contributor.name %></option>
+           <% else %>
+            <option value="<%= contributor.id %>"><%= contributor.id %> | <%= contributor.name %></option>
+          <% end %>
+       <% end %>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="tag_name">Tag:</label>
+    <select name="tag_id">
+       <% Tag.all.each do |tag| %>
+            <option value="<%= tag.id %>" selected><%= tag.id %> | <%= tag.name %></option>
+       <% end %>
+    </select>
+    <br>
+    <br>
+    <button>Add Recipe</button>
+
+  </div>
 

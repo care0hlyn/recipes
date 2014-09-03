@@ -4,8 +4,8 @@
 
 <h4>Tags</h4>
 <ul>
-  <% @recipe.tags do |tag|%>
-    <li><%= tag.name%></li>
+  <% @recipe.tags.each do |tag|%>
+    <li><%= tag.name %></li>
   <% end %>
 </ul>
 

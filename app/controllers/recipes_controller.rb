@@ -16,6 +16,8 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.create(params[:recipe])
+    @tag = Tag.find(params[:tag_id])
+    @recipe.tags << @tag
     if @recipe.save
       flash[:notice] = "Your recipe was added."
       redirect_to('/recipes')

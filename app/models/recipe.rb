@@ -6,3 +6,5 @@ class Recipe < ActiveRecord::Base
   belongs_to :contributor
   has_and_belongs_to_many :tags
 end
+
+
