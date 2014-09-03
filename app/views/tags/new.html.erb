@@ -1,0 +1,19 @@
+<% content_for(:title, "Tags") %>
+
+<% if @tag.errors.any? %>
+  <h3>Please fix the following errors: </h3>
+  <ul>
+    <% @tag.errors.full_messages.each do |message|%>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<h1>Enter new tag:</h1>
+
+<form action="/tags" method="post">
+  <%= render('form')%>
+  <button>Add Tag</button>
+</form>
+
+<p><a href="/tags">Click to go back to tag index.</a></p>
