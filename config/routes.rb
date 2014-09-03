@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   match('/contributors/:id', {:via => [:patch, :put], :to => 'contributors#update'})
   match('contributors/:id/recipes', {:via => :get, :to => 'recipes#index'})
 
+  match('/tags', {:via => :get, :to => 'tags#index'})
 end
