@@ -1,5 +1,3 @@
-== README
-
 Authored by:
 
 ####[Carolyn Huynh] (https://github.com/care0hlyn), [Justin Pacubas] (https://github.com/pac1687), [Scott Dudley] (https://github.com/dudleysr)
